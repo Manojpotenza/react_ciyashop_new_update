@@ -57,21 +57,17 @@ class Instagram extends Component {
   render (){
     const {APIData} = this.state;
     return (
-         <div class="insta_v2_wrapper insta_v2_style--default insta_v2_list_type--carousel insta_v2_without_header">
-                <div class="insta_v2_content">
-                    <div class="insta_v2_items insta_v2_style--with_meta">
-                        <Slider {...settings} >
-                          {APIData.map((image,i) =>
-                                <div key={i}>
-                                      <a href={image.link} target="_blank">
-                                      <img src={`${image.images.standard_resolution.url}`}  />
-                                    </a>
-                                </div>
-                            )}
-                          </Slider>
-                    </div>
-                </div>
-          </div>
+        <div class="insta-feed-wrapper">
+                <Slider {...settings} >
+                  {APIData.map((image,i) =>
+                     <div key={i}>
+                              <a href={image.link} target="_blank">
+                            <img src={`${image.images.standard_resolution.url}`}  />
+                          </a>
+                      </div>
+                  )}
+                </Slider>
+            </div>
       )
   }
 }
