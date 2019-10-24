@@ -1,7 +1,6 @@
 /***
- *  Products Data
+ *  Products Reducers
  ***/
-
 export default (state = { products: [],detail_products: [] }, action) => {
     if(action.type === "ACTUAL_PRODUCTS")
     {

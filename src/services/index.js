@@ -1,8 +1,8 @@
 // Get Category Unique Data
 export const uniqueCategory = (products) => {
     var uniqueCategorys = [];
-    products.map((product, index) => {
-        if (product.tags) {
+    products.map((product) => {
+        if (product.tags.length > 0 && product.tags) {
             product.tags.map((categorys) => {
                 if (uniqueCategorys.indexOf(categorys) === -1) {
                     uniqueCategorys.push(categorys);
@@ -16,8 +16,8 @@ export const uniqueCategory = (products) => {
 // Get Size Unique Data
 export const uniqueSizes = (products) => {
     var uniqueSizes = [];
-    products.map((product, index) => {
-        if (product.size) {
+    products.map((product) => {
+        if (product.size.length > 0 && product.size) {
             product.size.map((sizes) => {
                 if (uniqueSizes.indexOf(sizes) === -1) {
                     uniqueSizes.push(sizes);
@@ -170,8 +170,8 @@ export const getFilterProductsdata = (data, { category, size, color,value, sortO
 // Get Color Unique Data
 export const uniqueColors = (products) => {
     var uniqueColors = [];
-    products.map((product, index) => {
-        if(product.colors) {
+    products.map((product) => {
+        if(product.colors.length > 0 && product.colors) {
             product.colors.map((color) => {
                 if (uniqueColors.indexOf(color) === -1) {
                     uniqueColors.push(color);
@@ -187,8 +187,22 @@ export const uniqueMinMaxPrice = (products) => {
     let minimum = 20, maximum = 1000;
     products.map((product, index) => {
         let v = product.salePrice;
-        minimum = (v < minimum) ? v : minimum;
-        maximum = (v > maximum) ? v : maximum;
+        if(v < minimum)
+        {
+            minimum=v;
+        }
+        else
+        {
+            minimum=minimum;
+        }
+        if(v > maximum)
+        {
+            maximum=v;
+        }
+        else
+        {
+            maximum=maximum;
+        }
     })
     return {'min':minimum, 'max':maximum};
 }
