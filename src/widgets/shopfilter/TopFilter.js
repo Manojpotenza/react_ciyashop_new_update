@@ -36,8 +36,8 @@ class TopFilter extends Component {
                 document.querySelector(".grid-3-column").classList.add("active");
             }
         }
-        // List View
-        Listview(){
+        // Grid List View Display
+        GridListview(){
             var removeelems = document.getElementsByClassName("gridlist-button");
             [].forEach.call(removeelems, function(el) {
                 el.classList.remove('active');
@@ -54,15 +54,15 @@ class TopFilter extends Component {
             });
         }
 
-        // Layout Column View
-        LayoutView = (colSize) =>{
+        // Change Col List On Click Grid List
+        LayoutTwoView = (Size) =>{
             var removeelems = document.getElementsByClassName("gridlist-button");
             [].forEach.call(removeelems, function(el) {
                 el.classList.remove('active');
             });
 
             document.querySelector(".pgs-product-list").classList.remove("list");
-            if(colSize == "6")
+            if(Size == "6")
             {
                 document.querySelector(".grid-2-column").classList.add("active");
                 localStorage.setItem('setLayoutStyle','col-sm-6')
@@ -77,17 +77,17 @@ class TopFilter extends Component {
                 var elems = document.querySelector(".pgs-product-list").childNodes;
                 [].forEach.call(elems, function(el) {
                     el.className = '';
-                    el.classList.add('col-sm-'+colSize);
+                    el.classList.add('col-sm-'+Size);
                 });
             }
         }
-        LayoutViewFour = (colSize) =>{
+        LayoutViewFour = (Size) =>{
             var removeelems = document.getElementsByClassName("gridlist-button");
             [].forEach.call(removeelems, function(el) {
                 el.classList.remove('active');
             });
             document.querySelector(".pgs-product-list").classList.remove("list");
-            if(colSize == "3")
+            if(Size == "3")
             {
                 document.querySelector(".grid-4-column").classList.add("active");
                 localStorage.setItem('setLayoutStyle','col-sm-6 col-xl-3 col-lg-4')
@@ -102,13 +102,13 @@ class TopFilter extends Component {
                 });
             }
         }
-        LayoutViewThree = (colSize) =>{
+        LayoutViewThree = (Size) =>{
             var removeelems = document.getElementsByClassName("gridlist-button");
             [].forEach.call(removeelems, function(el) {
                 el.classList.remove('active');
             });
             document.querySelector(".pgs-product-list").classList.remove("list");
-            if(colSize == "4")
+            if(Size == "4")
             {
                 document.querySelector(".grid-3-column").classList.add("active");
                 localStorage.setItem('setLayoutStyle','col-sm-6 col-md-4')
@@ -140,7 +140,7 @@ class TopFilter extends Component {
                         <div className="gridlist-toggle-wrap">
                             <div className="gridlist-button-wrap">
                             <div className="gridlist-toggle">
-                                <Link  title="Grid view" className="gridlist-button grid-2-column" onClick={() => this.LayoutView(6)}>
+                                <Link  title="Grid view" className="gridlist-button grid-2-column" onClick={() => this.LayoutTwoView(6)}>
                                 <em>Grid view</em>
                                 </Link>
                                 <Link to="#" title="Grid view" className="gridlist-button grid-3-column active" onClick={() => this.LayoutViewThree(4)}> 
@@ -149,7 +149,7 @@ class TopFilter extends Component {
                                 <Link to="#" title="Grid view" className="gridlist-button grid-4-column"  onClick={() => this.LayoutViewFour(3)}>
                                 <em>Grid view</em>
                                 </Link>
-                                <Link to="#" title="List view" className="gridlist-button gridlist-toggle-list" onClick={() => this.Listview()} >
+                                <Link to="#" title="List view" className="gridlist-button gridlist-toggle-list" onClick={() => this.GridListview()} >
                                 <em>List view</em>
                                 </Link>
                             </div>
