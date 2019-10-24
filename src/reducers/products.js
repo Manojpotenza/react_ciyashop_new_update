@@ -2,12 +2,7 @@
  *  Products Data
  ***/
 
-const ProductState = {
-    products: [],
-    detail_products: []
-};
-
-export default (state = ProductState, action) => {
+export default (state = { products: [],detail_products: [] }, action) => {
     if(action.type === "ACTUAL_PRODUCTS")
     {
         return { ...state,

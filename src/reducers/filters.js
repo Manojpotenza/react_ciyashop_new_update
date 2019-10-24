@@ -1,18 +1,7 @@
 /**
  *  Filter Option Set
  */
-
-
-const DefaultFilterdata = {
-    category: [],
-    size:[],
-    color: [],
-    ratings:"",
-    value: { min: 150, max: 1050 },
-    search:"",
-    sortOrder: ""
-};
-export default (state = DefaultFilterdata, action) => {
+export default (state = {category: [],size:[],color: [], ratings:"",value: { min: 150, max: 1050 },search:"",sortOrder: ""}, action) => {
     if(action.type == "GET_CATEGORY_VALUE")
     {
         return {
