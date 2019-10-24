@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { buildUrl } from 'react-instafeed'
 import ig from 'fetch-instagram';
 import Slider from 'react-slick';
 

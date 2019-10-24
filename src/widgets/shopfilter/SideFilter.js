@@ -23,7 +23,6 @@ class SideFilter extends Component {
             SearchValue:''
         })
         this.props.searchValue('');
-
         this.nameInput.focus();
     }
 
@@ -57,10 +56,13 @@ class SideFilter extends Component {
     onClickSizeFilter(event, sizes) {
         var index = sizes.indexOf(event.target.value);
         if (event.target.checked)
+        {
             sizes.push(event.target.value);
+        }
         else
+        {
             sizes.splice(index, 1);
-
+        }
         this.props.sizeValue(sizes);
     }
     SearchTextchange(SearchText)
@@ -73,9 +75,9 @@ class SideFilter extends Component {
     }
 
     render(){
-        const sizeValues = this.props.filters.size;
-        const categoryValues = this.props.filters.category;
-        const filteredColors = this.props.filters.color;
+        const sizeFilterValues = this.props.filters.size;
+        const categoryFilterValues = this.props.filters.category;
+        const colorsFilterValues = this.props.filters.color;
 
         if(this.props.filters.value.max > 2000)
         {
@@ -109,7 +111,7 @@ class SideFilter extends Component {
                          {this.props.colors.map((color, index) => {
                                  return (
                                         <div className="form-check pgs-filter-checkbox" key={index}>
-                                            <input type="checkbox" onClick={(e) => this.onClickColorFilter(e,filteredColors)} value={color} defaultChecked={filteredColors.includes(color)? true : false}  className="form-check-input" id={color} />
+                                            <input type="checkbox" onClick={(e) => this.onClickColorFilter(e,colorsFilterValues)} value={color} defaultChecked={colorsFilterValues.includes(color)? true : false}  className="form-check-input" id={color} />
                                             <label className="form-check-label"
                                                 htmlFor={color}>{color}</label>
                                         </div>
@@ -124,7 +126,7 @@ class SideFilter extends Component {
                          {this.props.categorys.map((category, index) => {
                                             return (
                                                 <div className="form-check pgs-filter-checkbox" key={index}>
-                                                    <input type="checkbox" onClick={(e) => this.onClickCategoryFilter(e,categoryValues)} value={category} defaultChecked={categoryValues.includes(category)? true : false}  className="form-check-input" id={category} />
+                                                    <input type="checkbox" onClick={(e) => this.onClickCategoryFilter(e,categoryFilterValues)} value={category} defaultChecked={categoryFilterValues.includes(category)? true : false}  className="form-check-input" id={category} />
                                                     <label className="form-check-label"
                                                            htmlFor={category}>{category}</label>
                                                 </div> )
@@ -139,7 +141,7 @@ class SideFilter extends Component {
                             return (
 
                                     <div class="form-check pgs-filter-checkbox">
-                                        <input  type="checkbox" onClick={(e) => this.onClickSizeFilter(e, sizeValues)} value={size}  defaultChecked={sizeValues.includes(size)? true : false}  class="form-check-input" id={size} />
+                                        <input  type="checkbox" onClick={(e) => this.onClickSizeFilter(e, sizeFilterValues)} value={size}  defaultChecked={sizeFilterValues.includes(size)? true : false}  class="form-check-input" id={size} />
                                         <label class="form-check-label" htmlFor={size}>{size}</label>
                                     </div>
                                 )
