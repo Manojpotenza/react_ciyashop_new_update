@@ -110,7 +110,7 @@ class Productadd extends Component{
                                                                         <a href="javascript:void(0)">
                                                                             <img src={require(`../../../assets/images/${pictureimage}`)}  className="img-fluid" />
                                                                         </a>
-                                                                        <div className="image-content d-flex justify-content-center align-items-center">
+                                                                        <div className="d-flex justify-content-center image-content align-items-center">
                                                                             <ImageUploader
                                                                                 buttonText=""
                                                                                 withIcon={false}

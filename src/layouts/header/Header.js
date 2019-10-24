@@ -9,8 +9,8 @@ import { Row, Col, Container } from 'reactstrap';
 import Loader from 'react-loader-spinner';
 import AllProduct from '../../api/product';
 import {
-    FormGroup, Form, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter, Dropdown, DropdownToggle, DropdownMenu, DropdownItem, Navbar,
-    NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, UncontrolledDropdown, Collapse, TabContent, TabPane
+    Modal, ModalHeader, ModalBody, DropdownMenu, DropdownItem, Navbar,
+    NavbarToggler, Nav, NavItem, NavLink, UncontrolledDropdown, Collapse, TabContent, TabPane
 } from 'reactstrap';
 import classnames from 'classnames';
 

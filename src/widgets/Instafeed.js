@@ -60,9 +60,9 @@ class Instagram extends Component {
         <div class="insta-feed-wrapper">
                 <Slider {...settings} >
                   {APIData.map((image,i) =>
-                     <div key={i}>
+                      <div key={i}>
                               <a href={image.link} target="_blank">
-                            <img src={`${image.images.standard_resolution.url}`}  />
+                              <img src={`${image.images.standard_resolution.url}`}  />
                           </a>
                       </div>
                   )}

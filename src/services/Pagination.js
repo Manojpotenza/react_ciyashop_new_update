@@ -138,7 +138,6 @@ class Pagination extends Component {
     if (this.totalPages === 1) return null;
 
     const { currentPage } = this.state;
-    //const pages = this.fetchPageNumbers();
 
     return (
       <Fragment>

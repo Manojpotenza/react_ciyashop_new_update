@@ -1,5 +1,5 @@
 import React,{Component,Fragment} from 'react';
-import {HashRouter,Switch,Route} from 'react-router-dom';
+import {Switch,Route} from 'react-router-dom';
 
 import Headers from './layouts/header/Header';
 import Footer from './layouts/footer/Footer';
@@ -40,8 +40,6 @@ import SuccessScreen from './component/Account/SuccessScreen';
 import Reports from './component/admin/Reports';
 import Invoices from './component/admin/Invoices';
 
-
-import Sitebar from './component/Account/Sitebar';
 import OrderHistory from './component/Account/OrderHistory';
 import AdminDashboard from './component/admin';
 import SavedCardsadd from './component/Account/SavedCardsadd';
@@ -49,12 +47,9 @@ import SavedCardsadd from './component/Account/SavedCardsadd';
 class App extends Component {
 
   getUrl(pathname) {
-    let pathArray = pathname.split('/');
-    return `/${pathArray[1]}` === '/ComingSoon'  ? true : `/${pathArray[1]}` === '/Maintenance' ? true :`/${pathArray[1]}` === '/admin-panel'  ? true : false;
- }
- 
- 
-
+      let pathArray = pathname.split('/');
+      return `/${pathArray[1]}` === '/ComingSoon'  ? true : `/${pathArray[1]}` === '/Maintenance' ? true :`/${pathArray[1]}` === '/admin-panel'  ? true : false;
+  }
 
   render() {
     const { location } = this.props;
