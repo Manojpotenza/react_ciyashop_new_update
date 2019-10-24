@@ -93,12 +93,12 @@ class ProductDetail extends Component {
                             <div className="col-12">
                                 <ul className="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
                                 <li className="home">
-                                    <span className="item-element">
+                                    <span>
                                     <Link className="bread-link bread-home" to="/">Home</Link>
                                     </span>
                                 </li>
-                                    <li><span className="item-element">{Productedit.category}</span></li>
-                                     <li><span className="item-element">{Productedit.name}</span></li>
+                                    <li><span>{Productedit.category}</span></li>
+                                     <li><span>{Productedit.name}</span></li>
                                 </ul>
                             </div>
                         </Row>

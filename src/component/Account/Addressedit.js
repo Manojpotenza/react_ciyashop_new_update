@@ -16,7 +16,7 @@ class Addressedit extends Component {
       componentDidMount() {
           window.scrollTo(0, 0)
       }
-      handleValidation()
+      ValidationAddress()
       {
             let fieldvalue=this.state.billingaddress;
             let errors = {};
@@ -107,7 +107,7 @@ class Addressedit extends Component {
 
       }
 
-      handleValidation1()
+      ValidationAddress1()
       {
             let fieldvalue=this.state.shippingaddress;
             let errors = {};
@@ -200,14 +200,14 @@ class Addressedit extends Component {
 
     onProfileFormSubmit(e){
       e.preventDefault();
-      if(this.handleValidation()){
+      if(this.ValidationAddress()){
         return true;
       }
     }
 
     onProfileFormSubmit1(e){
       e.preventDefault();
-      if(this.handleValidation1()){
+      if(this.ValidationAddress1()){
         return true;
       }
     }
@@ -239,11 +239,11 @@ class Addressedit extends Component {
               <Col md={6}  className="text-right">
                   <ul className="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
                   <li className="home">
-                      <span className="item-element">
+                      <span>
                       <Link className="bread-link bread-home" to="/">Home</Link>
                       </span>
                   </li>
-                  <li><span className="item-element">My Account</span></li>
+                  <li><span>My Account</span></li>
                   </ul>
               </Col>
           </Row>

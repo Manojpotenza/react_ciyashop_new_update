@@ -220,11 +220,11 @@ class CheckOut extends Component {
                         <Col md={6} className="text-right">
                             <ul className="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
                                 <li className="home">
-                                    <span className="item-element">
+                                    <span>
                                         <Link className="bread-link bread-home" to="/">Home</Link>
                                     </span>
                                 </li>
-                                <li><span className="item-element">Checkout</span></li>
+                                <li><span>Checkout</span></li>
                             </ul>
                         </Col>
                     </Row>

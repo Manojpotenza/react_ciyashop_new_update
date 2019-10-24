@@ -17,7 +17,7 @@ class SavedCards extends Component {
       window.scrollTo(0, 0)
   }
 
-  handleValidation()
+  ValidationCart()
   {
       let fieldvalue=this.state.fieldvalue;
       let errors = {};
@@ -96,13 +96,13 @@ class SavedCards extends Component {
 
   onCardFormSubmit(e){
     e.preventDefault();
-    if(this.handleValidation()){
+    if(this.ValidationCart()){
       return true;
     }
   }
 
 
-  handleChange(field, e){
+  ChangeCartValue(field, e){
     let fieldvalue=this.state.fieldvalue;
     fieldvalue[field] = e.target.value;
     this.setState({fieldvalue});
@@ -124,11 +124,11 @@ class SavedCards extends Component {
                   <Col md={6}  className="text-right">
                       <ul className="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
                       <li className="home">
-                          <span className="item-element">
+                          <span>
                           <Link className="bread-link bread-home" to="/">Home</Link>
                           </span>
                       </li>
-                      <li><span className="item-element">My Account</span></li>
+                      <li><span>My Account</span></li>
                       </ul>
                   </Col>
               </Row>
@@ -149,28 +149,28 @@ class SavedCards extends Component {
                     <form className="form-row" onSubmit={this.onCardFormSubmit.bind(this)}>
                     <div class="form-group col-12">
                         <label>Card no</label>
-                        <input type="Text" class="form-control" placeholder="Card no" value={this.state.fieldvalue.cardno}   onChange={this.handleChange.bind(this, "cardno")}></input>
+                        <input type="Text" class="form-control" placeholder="Card no" value={this.state.fieldvalue.cardno}   onChange={this.ChangeCartValue.bind(this, "cardno")}></input>
                         <span className="error">{this.state.errors["cardno"]}</span>
                       </div>
                     <div class="form-group col-12">
                         <label>Card name</label>
-                        <input class="form-control" placeholder="Card name" value={this.state.fieldvalue.cardname} onChange={this.handleChange.bind(this, "cardname")}></input>
+                        <input class="form-control" placeholder="Card name" value={this.state.fieldvalue.cardname} onChange={this.ChangeCartValue.bind(this, "cardname")}></input>
                         <span className="error">{this.state.errors["cardname"]}</span>
                       </div>
                       <div class="form-group col-12">
                         <label>CVV</label>
-                        <input type="Text" class="form-control" placeholder="CVV" value={this.state.fieldvalue.cvv}  onChange={this.handleChange.bind(this, "cvv")}></input>
+                        <input type="Text" class="form-control" placeholder="CVV" value={this.state.fieldvalue.cvv}  onChange={this.ChangeCartValue.bind(this, "cvv")}></input>
                         <span className="error">{this.state.errors["cvv"]}</span>
                       </div>
                       <div class="form-group col-12 mb-0">
                         <label>Expiry Date</label>
                         </div>
                       <div class="form-group col-sm-6">
-                        <input type="Text" class="form-control" placeholder="Month"  value={this.state.fieldvalue.month} onChange={this.handleChange.bind(this, "month")}></input>
+                        <input type="Text" class="form-control" placeholder="Month"  value={this.state.fieldvalue.month} onChange={this.ChangeCartValue.bind(this, "month")}></input>
                         <span className="error">{this.state.errors["month"]}</span>
                       </div>
                       <div class="form-group col-sm-6">
-                        <input type="Text" class="form-control" placeholder="Year"  value={this.state.fieldvalue.year} onChange={this.handleChange.bind(this, "year")}></input>
+                        <input type="Text" class="form-control" placeholder="Year"  value={this.state.fieldvalue.year} onChange={this.ChangeCartValue.bind(this, "year")}></input>
                         <span className="error">{this.state.errors["year"]}</span>
                       </div>
                       <div class="form-group col-12 mb-0">

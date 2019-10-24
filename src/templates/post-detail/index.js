@@ -268,7 +268,7 @@ const productslider = {
                             )}
                         </span>
                     </div>
-                    <div className="share-wrapper social-profiles">
+                    <div className="social-profiles">
                         <span className="share-label">Share :</span>
                         <ul className="share-links">
                         <li>

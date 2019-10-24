@@ -21,9 +21,9 @@ const productslider = {
     slidesToShow: 5,
     slidesToScroll: 1
   };
-const data = {
+const productdata = {
     Product_single: "product-single.jpg",
-    image_gallery: [
+    product_gallery: [
        "product-single.jpg",
        "product-single.jpg",
        "product-single.jpg",
@@ -59,10 +59,10 @@ class Productadd extends Component{
                 isOpen: false,
                 ErrorMsg:""
             };
-            this.onImageUpload = this.onImageUpload.bind(this);
+            this.Uploadimage = this.Uploadimage.bind(this);
         }
 
-        onImageUpload(picture) {
+        Uploadimage(picture) {
             if(picture == '')
             {
                 this.setState({
@@ -96,7 +96,7 @@ class Productadd extends Component{
                                                     <div className="ciyashop-product-gallery ciyashop-product-gallery--with-images slick-carousel">
                                                     <Slider {...settings} className="ciyashop-product-gallery__wrapper popup-gallery">
                                                         <div className="ciyashop-product-gallery__image">
-                                                                <img src={require(`../../../assets/images/${data.Product_single}`)}   className="img-fluid" />
+                                                                <img src={require(`../../../assets/images/${productdata.Product_single}`)}   className="img-fluid" />
                                                         </div>
 
                                                     </Slider>
@@ -104,7 +104,7 @@ class Productadd extends Component{
                                                     </div>
                                                     <div className="ciyashop-product-thumbnails">
                                                         <Slider {...productslider} className="ciyashop-product-thumbnails__wrapper">
-                                                            {data.image_gallery.map((pictureimage,index) =>
+                                                            {productdata.product_gallery.map((pictureimage,index) =>
                                                                 <div key={index}>
                                                                     <div className="ciyashop-product-thumbnail__image">
                                                                         <a href="javascript:void(0)">
@@ -112,11 +112,11 @@ class Productadd extends Component{
                                                                         </a>
                                                                         <div className="image-content d-flex justify-content-center align-items-center">
                                                                             <ImageUploader
-                                                                                withPreview={true}
-                                                                                withIcon={false}
                                                                                 buttonText=""
-                                                                                onChange={this.onImageUpload}
+                                                                                withIcon={false}
+                                                                                withPreview={true}
                                                                                 fileTypeError={this.state.ErrorMsg}
+                                                                                onChange={this.Uploadimage}
                                                                                 imgExtension={['.jpg', '.jpeg', '.png']}
                                                                             />
                                                                         </div>
@@ -145,7 +145,7 @@ class Productadd extends Component{
                                                         </FormGroup>
                                                         <Label className="title">Size</Label>
                                                         <FormGroup>
-                                                            {data.size.map((size) =>
+                                                            {productdata.size.map((size) =>
                                                                 <Label>
                                                                     <Input type="checkbox"/>{' '}
                                                                     {size}
@@ -154,7 +154,7 @@ class Productadd extends Component{
                                                         </FormGroup>
                                                         <Label className="title">Color</Label>
                                                         <FormGroup>
-                                                            {data.colors.map((color) =>
+                                                            {productdata.colors.map((color) =>
                                                                 <Label>
                                                                     <Input type="checkbox"/>{' '}
                                                                     {color}
@@ -168,7 +168,7 @@ class Productadd extends Component{
 
                                                         <Label className="title mb-2">Category</Label>
                                                         <FormGroup>
-                                                            {data.tags.map((brand) =>
+                                                            {productdata.tags.map((brand) =>
                                                             <Label>
                                                             <Input type="checkbox"/>{' '}
                                                             {brand}

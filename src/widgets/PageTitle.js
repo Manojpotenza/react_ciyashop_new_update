@@ -14,11 +14,11 @@ function PageTitle(props) {
       </div>
       <ul className="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
           <li className="home">
-              <span className="item-element">
+              <span>
               <Link className="bread-link   " to="/">Home</Link>
               </span>
           </li>
-          <li><span className="item-element">{props.title}</span></li>
+          <li><span>{props.title}</span></li>
       </ul>
       </Col>
    )

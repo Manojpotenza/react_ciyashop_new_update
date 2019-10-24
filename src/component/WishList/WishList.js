@@ -66,10 +66,20 @@ class WishList extends Component {
 
                 <div class="inner-intro"><div class="container"><div class="intro-title align-items-center row"><div class="col-md-6">
                     <div class="intro-title-inner"><h1>WishList</h1></div></div><div class="text-right col-md-6">
-                        <ul class="ciyashop_breadcrumbs page-breadcrumb breadcrumbs"><li class="home"><span class="item-element"><Link class="bread-link bread-home" to="/">Home</Link></span>
-                        </li><li><span class="item-element">WishList</span></li></ul></div></div></div></div>
-
-
+                        <ul class="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
+                                <li class="home">
+                                    <span>
+                                        <Link class="bread-link bread-home" to="/">Home</Link>
+                                    </span>               
+                                </li>
+                                <li>
+                                    <span>WishList</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
                 <div className="content-wrapper section-ptb">
                     <Container>
                         <Row>

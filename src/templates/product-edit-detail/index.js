@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import { Link } from 'react-router-dom';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
-import { Row, Col,Container , FormGroup, Label, Input } from 'reactstrap';
+import { Row, FormGroup, Label, Input } from 'reactstrap';
 import ImageUploader from 'react-images-upload';
 
 const settings = {
@@ -53,7 +53,7 @@ class ProductEditDetail extends Component {
     }
 
 
-    onUpdateImage(picture) {
+    ImageChange(picture) {
         this.setState({
             pictures: this.state.pictures.concat(picture),
         });
@@ -62,7 +62,6 @@ class ProductEditDetail extends Component {
 
     render() {
         const { photoIndex, isOpen } = this.state;
-        const { newImage } = this.state1;
         const {product} = this.props;
         const images=[];
         {product.pictures.map((pic)=>
@@ -100,12 +99,12 @@ class ProductEditDetail extends Component {
                                                         </a>
                                                         <div className="image-content d-flex justify-content-center align-items-center">
                                                             <ImageUploader
+                                                                buttonText=""
                                                                 withPreview
                                                                 withIcon={false}
-                                                                buttonText=""
-                                                                onChange={() => this.onUpdateImage()}
-                                                                imgExtension={['.jpg', '.gif', '.png', '.gif']}
                                                                 maxFileSize={5242880}
+                                                                onChange={() => this.ImageChange()}
+                                                                imgExtension={['.jpg', '.gif', '.png', '.gif']}
                                                             />
                                                         </div>
                                                     </div>
