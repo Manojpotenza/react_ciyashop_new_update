@@ -100,10 +100,10 @@ class ProductEditDetail extends Component {
                                                         <div className="d-flex justify-content-center image-content align-items-center">
                                                             <ImageUploader
                                                                 buttonText=""
+                                                                onChange={() => this.ImageChange()}
                                                                 withPreview
                                                                 withIcon={false}
                                                                 maxFileSize={5242880}
-                                                                onChange={() => this.ImageChange()}
                                                                 imgExtension={['.jpg', '.gif', '.png', '.gif']}
                                                             />
                                                         </div>

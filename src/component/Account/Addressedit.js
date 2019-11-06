@@ -198,14 +198,14 @@ class Addressedit extends Component {
 
       }
 
-    onProfileFormSubmit(e){
+    onAddressFormSubmit(e){
       e.preventDefault();
       if(this.ValidationAddress()){
         return true;
       }
     }
 
-    onProfileFormSubmit1(e){
+    onAddressFormSubmit1(e){
       e.preventDefault();
       if(this.ValidationAddress1()){
         return true;
@@ -261,7 +261,7 @@ class Addressedit extends Component {
                       <h5 class="mb-0">Billing Address Edit</h5>
                     </div>
                     <div className="woocommerce-Address-info mt-4">
-                    <form onSubmit={this.onProfileFormSubmit.bind(this)}>
+                    <form onSubmit={this.onAddressFormSubmit.bind(this)}>
                     <div class="form-group">
                         <label>Billing Name</label>
                         <input type="Text" class="form-control" placeholder="Billing name" value={this.state.billingaddress.billingname} onChange={this.handleChange.bind(this, "billingname")}></input>
@@ -303,7 +303,7 @@ class Addressedit extends Component {
                       <h5 class="mb-0">Shipping Address Edit</h5>
                     </div>
                     <div className="woocommerce-Address-info mt-4">
-                    <form onSubmit={this.onProfileFormSubmit1.bind(this)}>
+                    <form onSubmit={this.onAddressFormSubmit1.bind(this)}>
                       <div class="form-group">
                           <label>Billing Name</label>
                           <input type="Text" class="form-control" placeholder="Shipping name" value={this.state.shippingaddress.shippingname} onChange={this.handleChange1.bind(this, "shippingname")}></input>

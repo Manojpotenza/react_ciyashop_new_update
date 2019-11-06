@@ -8,7 +8,7 @@ import Common from '../../api/common';
 import { Link } from 'react-router-dom';
 class SavedCards extends Component {
   state = {
-      fieldvalue: Common['0']['carddetail'],
+      targetvalue: Common['0']['carddetail'],
       errors: {}
   };
 
@@ -19,44 +19,44 @@ class SavedCards extends Component {
 
   ValidationCart()
   {
-      let fieldvalue=this.state.fieldvalue;
+      let targetvalue=this.state.targetvalue;
       let errors = {};
       let formIsValid = true;
 
       //Card Number
-      if (!fieldvalue["cardno"]) {
+      if (!targetvalue["cardno"]) {
           formIsValid = false;
           errors["cardno"] = "Please Enter Card Number";
       }
 
-      if (typeof fieldvalue["cardno"] !== "undefined") {
-          if (!fieldvalue["cardno"].match(/\d{4}-?\d{4}-?\d{4}-?\d{4}/)) {
+      if (typeof targetvalue["cardno"] !== "undefined") {
+          if (!targetvalue["cardno"].match(/\d{4}-?\d{4}-?\d{4}-?\d{4}/)) {
             formIsValid = false;
             errors["cardno"] = "Please Enter Valid Card No";
           }
       }
 
        //Card Holder Name
-      if (!fieldvalue["cardname"]) {
+      if (!targetvalue["cardname"]) {
         formIsValid = false;
         errors["cardname"] = "Please Enter Card Holder Name";
       }
 
-      if (typeof fieldvalue["cardname"] !== "undefined") {
-        if (!fieldvalue["cardname"].match(/^[a-zA-Z -]+$/)) {
+      if (typeof targetvalue["cardname"] !== "undefined") {
+        if (!targetvalue["cardname"].match(/^[a-zA-Z -]+$/)) {
             formIsValid = false;
             errors["cardname"] = "Enter Valid Card Holder Name";
           }
       }
 
       //Card Number
-      if (!fieldvalue["cvv"]) {
+      if (!targetvalue["cvv"]) {
         formIsValid = false;
         errors["cvv"] = "Please Enter CVV";
       }
 
-      if (typeof fieldvalue["cvv"] !== "undefined") {
-          if (!fieldvalue["cvv"].match(/^[0-9]{3}$/)) {
+      if (typeof targetvalue["cvv"] !== "undefined") {
+          if (!targetvalue["cvv"].match(/^[0-9]{3}$/)) {
             formIsValid = false;
             errors["cvv"] = "Please Enter Valid CVV No";
           }
@@ -64,26 +64,26 @@ class SavedCards extends Component {
 
 
       //Card Number
-      if (!fieldvalue["month"]) {
+      if (!targetvalue["month"]) {
         formIsValid = false;
         errors["month"] = "Please Enter Month";
       }
 
-      if (typeof fieldvalue["month"] !== "undefined") {
-          if (!fieldvalue["month"].match(/^[0-9]{2}$/)) {
+      if (typeof targetvalue["month"] !== "undefined") {
+          if (!targetvalue["month"].match(/^[0-9]{2}$/)) {
             formIsValid = false;
             errors["month"] = "Month not Valid";
           }
       }
 
       //Card Number
-      if (!fieldvalue["year"]) {
+      if (!targetvalue["year"]) {
         formIsValid = false;
         errors["year"] = "Please Enter Year";
       }
 
-      if (typeof fieldvalue["year"] !== "undefined") {
-          if (!fieldvalue["year"].match(/^[0-9]{4}$/)) {
+      if (typeof targetvalue["year"] !== "undefined") {
+          if (!targetvalue["year"].match(/^[0-9]{4}$/)) {
             formIsValid = false;
             errors["year"] = "Year Not Valid";
           }
@@ -103,9 +103,9 @@ class SavedCards extends Component {
 
 
   ChangeCartValue(field, e){
-    let fieldvalue=this.state.fieldvalue;
-    fieldvalue[field] = e.target.value;
-    this.setState({fieldvalue});
+    let targetvalue=this.state.targetvalue;
+    targetvalue[field] = e.target.value;
+    this.setState({targetvalue});
   }
 
 
@@ -149,28 +149,28 @@ class SavedCards extends Component {
                     <form className="form-row" onSubmit={this.onCardFormSubmit.bind(this)}>
                     <div class="form-group col-12">
                         <label>Card no</label>
-                        <input type="Text" class="form-control" placeholder="Card no" value={this.state.fieldvalue.cardno}   onChange={this.ChangeCartValue.bind(this, "cardno")}></input>
+                        <input type="Text" class="form-control" placeholder="Card no" value={this.state.targetvalue.cardno}   onChange={this.ChangeCartValue.bind(this, "cardno")}></input>
                         <span className="error">{this.state.errors["cardno"]}</span>
                       </div>
                     <div class="form-group col-12">
                         <label>Card name</label>
-                        <input class="form-control" placeholder="Card name" value={this.state.fieldvalue.cardname} onChange={this.ChangeCartValue.bind(this, "cardname")}></input>
+                        <input class="form-control" placeholder="Card name" value={this.state.targetvalue.cardname} onChange={this.ChangeCartValue.bind(this, "cardname")}></input>
                         <span className="error">{this.state.errors["cardname"]}</span>
                       </div>
                       <div class="form-group col-12">
                         <label>CVV</label>
-                        <input type="Text" class="form-control" placeholder="CVV" value={this.state.fieldvalue.cvv}  onChange={this.ChangeCartValue.bind(this, "cvv")}></input>
+                        <input type="Text" class="form-control" placeholder="CVV" value={this.state.targetvalue.cvv}  onChange={this.ChangeCartValue.bind(this, "cvv")}></input>
                         <span className="error">{this.state.errors["cvv"]}</span>
                       </div>
                       <div class="form-group col-12 mb-0">
                         <label>Expiry Date</label>
                         </div>
                       <div class="form-group col-sm-6">
-                        <input type="Text" class="form-control" placeholder="Month"  value={this.state.fieldvalue.month} onChange={this.ChangeCartValue.bind(this, "month")}></input>
+                        <input type="Text" class="form-control" placeholder="Month"  value={this.state.targetvalue.month} onChange={this.ChangeCartValue.bind(this, "month")}></input>
                         <span className="error">{this.state.errors["month"]}</span>
                       </div>
                       <div class="form-group col-sm-6">
-                        <input type="Text" class="form-control" placeholder="Year"  value={this.state.fieldvalue.year} onChange={this.ChangeCartValue.bind(this, "year")}></input>
+                        <input type="Text" class="form-control" placeholder="Year"  value={this.state.targetvalue.year} onChange={this.ChangeCartValue.bind(this, "year")}></input>
                         <span className="error">{this.state.errors["year"]}</span>
                       </div>
                       <div class="form-group col-12 mb-0">
