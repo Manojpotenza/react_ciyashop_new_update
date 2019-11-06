@@ -65,7 +65,7 @@ class WishList extends Component {
               <ToastContainer autoClose={2500} />
 
                 <div class="inner-intro"><div class="container"><div class="intro-title align-items-center row"><div class="col-md-6">
-                    <div class="intro-title-inner"><h1>WishList</h1></div></div><div class="text-right col-md-6">
+                    <div class="intro-title-inner"><h1>Wishlist</h1></div></div><div class="text-right col-md-6">
                         <ul class="ciyashop_breadcrumbs page-breadcrumb breadcrumbs">
                                 <li class="home">
                                     <span>
@@ -73,7 +73,7 @@ class WishList extends Component {
                                     </span>               
                                 </li>
                                 <li>
-                                    <span>WishList</span>
+                                    <span>Wishlist</span>
                                 </li>
                             </ul>
                         </div>
