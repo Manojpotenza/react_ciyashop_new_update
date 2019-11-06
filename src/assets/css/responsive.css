@@ -1429,6 +1429,11 @@
     margin-top: 40px;
   }
 
+  .ril__toolbarRightSide {
+    padding-top: 0;
+    padding-right: 10px !important;
+  }
+
 }
 
 @media (max-width:575px) {
@@ -2167,5 +2172,9 @@
   .coming-soon .mntc-cs-item.mntc-cs-content > p {
     margin-bottom: 20px;
   }
+
+.ciyashop_info_box_2-icon-style-border.ciyashop_info_box_2-icon-size-lg .ciyashop_info_box_2-icon-inner {
+  font-size: 28px;
+}
 
 }

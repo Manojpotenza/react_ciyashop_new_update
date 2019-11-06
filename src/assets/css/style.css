@@ -19069,6 +19069,14 @@ button:focus {
   outline: 0
 }
 
+.ril__toolbarRightSide {
+  padding-top: 10px;
+}
+
+.respond-form .comment-form-cookies-consent .form-check-input {
+    margin-left: -1.5rem;
+}
+
 @media screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
   .single-post .entry-footer .share {
     width: 100%;
