@@ -43,7 +43,7 @@ class PageNotFound extends Component {
                                 <div className="fourofour-searchform">
                                     <form className="clearfix" id="searchform" action="">
                                         <label className="screen-reader-text" for="s">Search for:</label>
-                                        <input type="text" value="" name="s" id="s" placeholder="Search the Site…"/>
+                                        <input type="text"  placeholder="Search the Site…"/>
                                         <Button className="search-button" value="Search" type="button"> <i className="fa fa-search"></i>
                                         </Button>
                                     </form>

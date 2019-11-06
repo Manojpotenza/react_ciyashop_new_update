@@ -191,10 +191,10 @@ class Header extends React.Component {
                                                 <ul>
 
                                                     <li className="topbar_item topbar_item_type-email">
-                                                        <Link to="#"><i className="fa fa-envelope-o">&nbsp;</i>support@ciyashop.com</Link>
+                                                        <Link to="/Contactus"><i className="fa fa-envelope-o">&nbsp;</i>support@ciyashop.com</Link>
                                                     </li>
                                                     <li className="topbar_item topbar_item_type-phone_number">
-                                                        <Link to="#"><i className="fa fa-phone">&nbsp;</i>126-632-2345</Link>
+                                                        <Link to="/Contactus"><i className="fa fa-phone">&nbsp;</i>126-632-2345</Link>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -472,7 +472,7 @@ class Header extends React.Component {
                                                             <Link className="btn btn-secondary ml-2 mt-1" onClick={this.toggle} >Cancel</Link>
                                                         </div>
                                                         <p className="mb-0">Don't have account? <Link to="#" className={classnames({ active: this.state.activeTab === '2' })}
-                                                            onClick={() => { this.logintoggle('2'); }} > Register here </Link></p>
+                                                            onClick={() => { this.logintoggle('2'); }} > Register </Link>here</p>
                                                     </form>
                                                 </TabPane>
                                                 <TabPane tabId="2">
@@ -499,7 +499,7 @@ class Header extends React.Component {
 
                                                         </div>
                                                         <p className="mb-0">Already have account? <Link to="#" className={classnames({ active: this.state.activeTab === '1' })}
-                                                            onClick={() => { this.logintoggle('1'); }} > Login here </Link></p>
+                                                            onClick={() => { this.logintoggle('1'); }} > SignIn </Link> here </p>
                                                     </form>
                                                 </TabPane>
                                             </TabContent>
